@@ -26,7 +26,7 @@ describe('editorial typography tokens', () => {
     expect(homeTitleRule).toContain('max-width: 9.5ch');
     expect(homeTitleRule).toContain('font-size: clamp(3rem, 5vw, 4.9rem)');
     expect(mobileHomeTitleRule).toContain('max-width: 9.5ch');
-    expect(mobileHomeTitleRule).toContain('font-size: clamp(3rem, 10vw, 4.9rem)');
+    expect(mobileHomeTitleRule).toContain('font-size: clamp(3rem, 5vw, 4.9rem)');
     expect(homeHeadingRule).toContain('line-height: 1.12');
   });
 });
