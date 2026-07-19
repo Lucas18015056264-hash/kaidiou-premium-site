@@ -160,7 +160,7 @@ describe('SEO metadata and structured data', () => {
     );
     expect(document.head.querySelector('meta[property="og:image"]')).toHaveAttribute(
       'content',
-      'https://site.example/media/v2/home-hero.webp',
+      'https://site.example/media/v3/case-wanda-garage.jpg',
     );
     expect(
       [...document.head.querySelectorAll<HTMLLinkElement>('link[rel="alternate"]')].map((link) => [

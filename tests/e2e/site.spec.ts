@@ -64,7 +64,10 @@ test('homepage exposes audiences, product order, purchase path, and evidence bou
   await expect(page.locator('[data-product-slug]')).toHaveCount(5);
   expect(await page.locator('[data-product-slug]').evaluateAll((links) => links.map((link) => link.getAttribute('data-product-slug')))).toEqual(productSlugs);
   await expect(page.locator('form.inquiry-form--compact')).toBeVisible();
-  await expect(page.locator('figure[data-media-id="home-hero"] img')).toHaveAttribute('data-media-provenance', 'concept-visual');
+  await expect(page.locator('figure[data-media-id="case-wanda-garage"] img').first()).toHaveAttribute(
+    'data-media-provenance',
+    'official-case',
+  );
   await expect(page.locator('figure[data-media-id="company-factory"] img')).toHaveAttribute('data-media-provenance', 'company-material');
 });
 

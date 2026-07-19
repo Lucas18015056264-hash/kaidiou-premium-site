@@ -17,7 +17,7 @@ export function ProductCard({ product, locale, priority = false }: ProductCardPr
       data-product-slug={product.slug}
       to={localePath(locale, `/products/${product.slug}`)}
     >
-      <MediaFigure mediaId={product.mediaId} locale={locale} priority={priority} captionMode="hidden" />
+      <MediaFigure mediaId={product.packageMediaId} locale={locale} priority={priority} captionMode="hidden" />
       <span className="product-card__type">
         {priority
           ? locale === 'zh'

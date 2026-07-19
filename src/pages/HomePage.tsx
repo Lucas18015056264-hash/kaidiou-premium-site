@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { localePath } from '../app/locale-path';
+import { officialCaseStudies } from '../app/case-studies';
 import { contentByLocale, type Audience, type Locale } from '../app/site-content';
 import { InquiryForm } from '../components/InquiryForm';
 import { MediaFigure } from '../components/MediaFigure';
@@ -27,6 +28,9 @@ export const homePageCopy = {
     },
     roles: '按客户角色进入',
     products: '重点材料',
+    cases: '真实工程案例',
+    casesTitle: '从官网公开案例中，看到颜色、标线与耐用系统如何落到车库现场',
+    caseSource: '查看凯迪欧官网案例来源',
     procurement: '购买与合作方式',
     company: '官方资料边界',
     inquiry: '提交项目需求',
@@ -42,6 +46,9 @@ export const homePageCopy = {
     },
     roles: 'Start by audience',
     products: 'Featured materials',
+    cases: 'Official project cases',
+    casesTitle: 'See how color, markings, and durable systems appear in KDO’s public garage case record',
+    caseSource: 'View official KDO case source',
     procurement: 'Buying and partnership',
     company: 'Official information boundary',
     inquiry: 'Submit project needs',
@@ -56,7 +63,7 @@ export function HomePage({ locale }: HomePageProps) {
   return (
     <main id="main-content" className="home-page kdo-v2-page" data-locale={locale}>
       <section className="kdo-home-hero" aria-labelledby="home-title">
-        <MediaFigure mediaId="home-hero" locale={locale} priority captionMode="overlay" className="kdo-home-hero__media" />
+        <MediaFigure mediaId="case-wanda-garage" locale={locale} priority captionMode="overlay" className="kdo-home-hero__media" />
         <div className="shell-grid kdo-home-hero__grid">
           <div className="kdo-home-hero__copy">
             <p className="eyebrow">{copy.hero.eyebrow}</p>
@@ -99,6 +106,40 @@ export function HomePage({ locale }: HomePageProps) {
         <div className="shell-grid product-section__grid">
           {content.products.map((product, index) => (
             <ProductCard key={product.slug} product={product} locale={locale} priority={index < 2} />
+          ))}
+        </div>
+      </section>
+
+      <section className="kdo-case-section" aria-labelledby="official-cases-title">
+        <div className="shell-grid section-heading">
+          <p className="eyebrow">{copy.cases}</p>
+          <h2 id="official-cases-title">{copy.casesTitle}</h2>
+        </div>
+        <div className="shell-grid kdo-case-section__grid">
+          {officialCaseStudies.map((caseStudy, index) => (
+            <article key={caseStudy.id} className="kdo-case-card">
+              <MediaFigure
+                mediaId={caseStudy.mediaId}
+                locale={locale}
+                priority={index === 0}
+                captionMode="hidden"
+              />
+              <div className="kdo-case-card__copy">
+                <p className="eyebrow">{copy.cases}</p>
+                <h3>{caseStudy.title[locale]}</h3>
+                <p>{caseStudy.system[locale]}</p>
+                <p>{caseStudy.area[locale]}</p>
+                <a
+                  className="kdo-case-card__source"
+                  href={caseStudy.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${copy.caseSource}: ${caseStudy.title[locale]}`}
+                >
+                  {copy.caseSource} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
           ))}
         </div>
       </section>

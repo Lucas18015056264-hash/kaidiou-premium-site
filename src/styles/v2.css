@@ -326,6 +326,105 @@
   align-items: stretch;
 }
 
+.kdo-case-section {
+  padding-block: var(--space-7);
+  background:
+    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--color-nano) 14%, transparent), transparent 33rem),
+    #131a16;
+}
+
+.kdo-case-section__grid {
+  align-items: stretch;
+}
+
+.kdo-case-card {
+  display: grid;
+  grid-column: span 4;
+  min-height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line-subtle);
+  background: color-mix(in srgb, var(--color-carbon) 88%, #223027);
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.kdo-case-card:first-child {
+  grid-column: span 6;
+}
+
+.kdo-case-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+.kdo-case-card:nth-child(3) {
+  grid-column: span 3;
+}
+
+.kdo-case-card:hover {
+  border-color: color-mix(in srgb, var(--color-nano) 64%, var(--color-mineral));
+  background: color-mix(in srgb, var(--color-carbon) 78%, #2a4032);
+  transform: translateY(-0.2rem);
+}
+
+.kdo-case-card .media-figure {
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.kdo-case-card:first-child .media-figure {
+  aspect-ratio: 16 / 9;
+}
+
+.kdo-case-card .media-figure img {
+  filter: saturate(0.88) contrast(1.08) brightness(0.91);
+  transition: filter 360ms var(--ease-material), transform 360ms var(--ease-material);
+}
+
+.kdo-case-card:hover .media-figure img {
+  filter: saturate(1.03) contrast(1.08) brightness(0.98);
+  transform: scale(1.028);
+}
+
+.kdo-case-card__copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.kdo-case-card__copy .eyebrow {
+  margin: 0;
+  color: var(--color-nano);
+}
+
+.kdo-case-card h3 {
+  margin: 0;
+  color: var(--color-mineral);
+  font-size: clamp(1.35rem, 2vw, 2.05rem);
+}
+
+.kdo-case-card__copy > p:not(.eyebrow) {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-mineral) 76%, var(--color-concrete));
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.kdo-case-card__source {
+  width: fit-content;
+  margin-top: var(--space-2);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-nano) 68%, transparent);
+  color: var(--color-mineral);
+  font-family: var(--font-utility);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.kdo-case-card__source:hover {
+  color: var(--color-nano);
+}
+
 .kdo-product-gallery__grid .product-card,
 .product-section__grid .product-card {
   grid-column: span 4;
@@ -612,7 +711,11 @@
   }
 
   .kdo-product-gallery__grid .product-card,
-  .product-section__grid .product-card {
+  .product-section__grid .product-card,
+  .kdo-case-card,
+  .kdo-case-card:first-child,
+  .kdo-case-card:nth-child(2),
+  .kdo-case-card:nth-child(3) {
     grid-column: span 6;
   }
 
@@ -644,7 +747,11 @@
   .kdo-product-gallery__grid .product-card:nth-child(2),
   .product-section__grid .product-card,
   .product-section__grid .product-card:first-child,
-  .product-section__grid .product-card:nth-child(2) {
+  .product-section__grid .product-card:nth-child(2),
+  .kdo-case-card,
+  .kdo-case-card:first-child,
+  .kdo-case-card:nth-child(2),
+  .kdo-case-card:nth-child(3) {
     grid-column: 1 / -1;
   }
 

@@ -117,8 +117,8 @@ export function buildPageSeo(locale: Locale, pathname: string): PageSeo {
       ogImage: urlFor(
         siteUrl,
         route.product?.slug === 'nano-silicon-marking-paint'
-          ? '/media/v2/product-marking.webp'
-          : '/media/v2/home-hero.webp',
+          ? '/media/v2/pack-marking.webp'
+          : '/media/v3/case-wanda-garage.jpg',
       ),
     } : {}),
     locale: locale === 'zh' ? 'zh_CN' : 'en_US',

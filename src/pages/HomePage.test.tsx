@@ -15,9 +15,10 @@ describe('HomePage', () => {
     );
 
     expect(screen.getByRole('heading', { level: 1, name: '工业地坪材料与低饱和色彩系统' })).toBeVisible();
-    expect(screen.getByRole('img', { name: '低饱和工业地坪色彩环境概念图' })).toHaveAttribute(
+    const hero = screen.getByRole('region', { name: '工业地坪材料与低饱和色彩系统' });
+    expect(within(hero).getByRole('img', { name: '山东聊城万达广场地下车库地坪实拍' })).toHaveAttribute(
       'src',
-      '/media/v2/home-hero.webp',
+      '/media/v3/case-wanda-garage.jpg',
     );
     expect(screen.getByRole('link', { name: '咨询购买' })).toHaveAttribute('href', '/contact');
     expect(screen.getByRole('link', { name: '查看产品' })).toHaveAttribute('href', '/products');
@@ -110,5 +111,21 @@ describe('HomePage', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Project Owners' })).toBeVisible();
     expect(screen.getByRole('heading', { level: 3, name: 'Distribution Partners' })).toBeVisible();
     expect(screen.getByRole('heading', { level: 3, name: 'Global Buyers' })).toBeVisible();
+  });
+
+  it('features traceable official KDO project cases rather than presenting every visual as a concept', () => {
+    render(
+      <MemoryRouter>
+        <HomePage locale="en" />
+      </MemoryRouter>,
+    );
+
+    const cases = screen.getByRole('region', {
+      name: 'See how color, markings, and durable systems appear in KDO’s public garage case record',
+    });
+    expect(within(cases).getByRole('heading', { level: 3, name: 'Liaocheng Wanda Plaza Underground Garage' })).toBeVisible();
+    expect(
+      within(cases).getByRole('link', { name: 'View official KDO case source: Liaocheng Wanda Plaza Underground Garage' }),
+    ).toHaveAttribute('href', 'https://www.jsdiou.com/nd.jsp?fromColId=107&id=89');
   });
 });

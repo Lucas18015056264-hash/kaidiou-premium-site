@@ -1,9 +1,10 @@
 import type { Locale } from './site-content';
 
-export type MediaProvenance = 'company-material' | 'concept-visual' | 'verified-case';
+export type MediaProvenance = 'company-material' | 'concept-visual' | 'official-case' | 'verified-case';
 export type MediaRole =
   | 'atmosphere-not-case'
   | 'company-material-not-independent-verification'
+  | 'official-case'
   | 'verified-case';
 
 export type MediaId =
@@ -18,7 +19,10 @@ export type MediaId =
   | 'pack-colorant'
   | 'pack-silicon-crystal'
   | 'pack-colored-sand'
-  | 'pack-pu-mortar';
+  | 'pack-pu-mortar'
+  | 'case-wanda-garage'
+  | 'case-greenland-garage'
+  | 'case-longfor-garage';
 
 export interface SiteMedia {
   readonly src: string;
@@ -38,6 +42,11 @@ const conceptCaption = {
 const companyCaption = {
   zh: '企业资料视觉 · 非独立核验案例',
   en: 'Company material visual · not independently verified as a project case',
+} as const;
+
+const officialCaseCaption = {
+  zh: '凯迪欧官网工程案例实拍 · 项目与工艺信息以原案例页面为准',
+  en: 'Official KDO case photo · project and system details follow the original KDO case page',
 } as const;
 
 export const siteMedia: Readonly<Record<MediaId, SiteMedia>> = {
@@ -184,6 +193,42 @@ export const siteMedia: Readonly<Record<MediaId, SiteMedia>> = {
     caption: companyCaption,
     provenance: 'company-material',
     role: 'company-material-not-independent-verification',
+  },
+  'case-wanda-garage': {
+    src: '/media/v3/case-wanda-garage.jpg',
+    width: 1440,
+    height: 1080,
+    alt: {
+      zh: '山东聊城万达广场地下车库地坪实拍',
+      en: 'Liaocheng Wanda Plaza underground garage floor case photo',
+    },
+    caption: officialCaseCaption,
+    provenance: 'official-case',
+    role: 'official-case',
+  },
+  'case-greenland-garage': {
+    src: '/media/v3/case-greenland-garage.jpg',
+    width: 1000,
+    height: 750,
+    alt: {
+      zh: '济南绿地中央公馆地下车库地坪实拍',
+      en: 'Jinan Greenland Central Mansion underground garage floor case photo',
+    },
+    caption: officialCaseCaption,
+    provenance: 'official-case',
+    role: 'official-case',
+  },
+  'case-longfor-garage': {
+    src: '/media/v3/case-longfor-garage.jpg',
+    width: 1000,
+    height: 1333,
+    alt: {
+      zh: '济南龙湖春江郦城地下车库地坪实拍',
+      en: 'Jinan Longfor Chunjiang Licheng underground garage floor case photo',
+    },
+    caption: officialCaseCaption,
+    provenance: 'official-case',
+    role: 'official-case',
   },
 };
 

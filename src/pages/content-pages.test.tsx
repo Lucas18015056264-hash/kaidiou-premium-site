@@ -10,7 +10,7 @@ import { SolutionsPage } from './SolutionsPage';
 describe('content pages', () => {
   afterEach(cleanup);
 
-  it('keeps nano-silicon materials first in the product centre with V2 imagery', () => {
+  it('keeps nano-silicon materials first in the product centre with traceable package imagery', () => {
     render(
       <MemoryRouter>
         <ProductsPage locale="zh" />
@@ -20,9 +20,9 @@ describe('content pages', () => {
     expect(
       screen.getAllByRole('heading', { level: 2 }).slice(0, 2).map((heading) => heading.textContent),
     ).toEqual(['纳米硅标线涂料', '纳米硅着色剂']);
-    expect(screen.getByRole('img', { name: '纳米硅标线涂料应用概念图' })).toHaveAttribute(
+    expect(screen.getByRole('img', { name: '纳米硅划线漆包装图' })).toHaveAttribute(
       'src',
-      '/media/v2/product-marking.webp',
+      '/media/v2/pack-marking.webp',
     );
   });
 
