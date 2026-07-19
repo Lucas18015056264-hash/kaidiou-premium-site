@@ -13,8 +13,8 @@
   --text-display: clamp(3rem, 6.8vw, 7.75rem);
   --text-h1-route: clamp(2.7rem, 5vw, 6rem);
   --text-h2: clamp(1.35rem, 2.1vw, 2.25rem);
-  --text-body-lg: clamp(1.05rem, 1.4vw, 1.35rem);
-  --text-body: clamp(1rem, 0.4vw + 0.84rem, 1.1rem);
+  --text-body-lg: 1.12rem;
+  --text-body: 1rem;
   --text-small: 0.78rem;
 
   --space-1: 0.5rem;

@@ -3,6 +3,8 @@ dist/
 playwright-report/
 test-results/
 .playwright-cli/
+.superpowers/
+design-system/
 .env
 .env.*
 !.env.example

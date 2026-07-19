@@ -39,3 +39,9 @@
 ## Follow-up commit
 
 - `Fix editorial typography responsive overrides`
+## Breakpoint continuity fix — 2026-07-19
+
+- Commit: `f42e6ea Smooth editorial typography breakpoints`
+- TDD: the focused typography test failed before the CSS change, then passed after updating the mobile hero title from `10vw` to `5vw`.
+- Validation: `npm test -- src/styles/editorial-typography.test.ts` passed (2/2); `npm test` passed (82/82).
+- Blockers: none.

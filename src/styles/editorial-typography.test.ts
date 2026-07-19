@@ -9,11 +9,12 @@ const v2Css = readFileSync(resolve(process.cwd(), 'src/styles/v2.css'), 'utf8');
 describe('editorial typography tokens', () => {
   it('defines the approved display stack and reading rhythm', () => {
     expect(tokens).toContain('--font-display: "DengXian", "PingFang SC", "Microsoft YaHei UI", sans-serif;');
-    expect(tokens).toContain('--text-body: clamp(1rem,');
+    expect(tokens).toContain('--text-body: 1rem;');
+    expect(tokens).toContain('--text-body-lg: 1.12rem;');
     expect(globalCss).toContain('line-height: 1.72');
 
     const globalHeadingRule = globalCss.match(/h1,\s*h2\s*\{([^}]*)\}/)?.[1] ?? '';
-    expect(globalHeadingRule).toContain('letter-spacing: -0.025em');
+    expect(globalHeadingRule).toContain('letter-spacing: 0');
     expect(globalHeadingRule).toContain('line-height: 1.12');
   });
 
@@ -24,9 +25,9 @@ describe('editorial typography tokens', () => {
 
     expect(homeTitleRule).toContain('text-wrap: balance');
     expect(homeTitleRule).toContain('max-width: 9.5ch');
-    expect(homeTitleRule).toContain('font-size: clamp(3rem, 5vw, 4.9rem)');
+    expect(homeTitleRule).toContain('font-size: 4.7rem');
     expect(mobileHomeTitleRule).toContain('max-width: 9.5ch');
-    expect(mobileHomeTitleRule).toContain('font-size: clamp(3rem, 5vw, 4.9rem)');
+    expect(mobileHomeTitleRule).toContain('font-size: 3.35rem');
     expect(homeHeadingRule).toContain('line-height: 1.12');
   });
 
@@ -38,7 +39,7 @@ describe('editorial typography tokens', () => {
 
     expect(productBodyRule).toContain('line-height: 1.7');
     expect(caseTitleRule).toContain('line-height: 1.24');
-    expect(caseTitleRule).toContain('letter-spacing: -0.015em');
+    expect(caseTitleRule).toContain('letter-spacing: 0');
     expect(caseBodyRule).toContain('font-size: 0.98rem');
     expect(caseBodyRule).toContain('line-height: 1.72');
     expect(caseEyebrowRule).toContain('font-family: var(--font-body)');

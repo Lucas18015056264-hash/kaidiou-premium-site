@@ -83,7 +83,7 @@
 
 .product-card h2 {
   margin-block: 0;
-  font-size: clamp(1.45rem, 2.1vw, 2.35rem);
+  font-size: 1.85rem;
 }
 
 .product-card p {
@@ -164,7 +164,7 @@
 .kdo-home-hero h1 {
   max-width: 9.5ch;
   margin-bottom: var(--space-5);
-  font-size: clamp(3rem, 5vw, 4.9rem);
+  font-size: 4.7rem;
   text-wrap: balance;
 }
 
@@ -404,8 +404,8 @@
 .kdo-case-card h3 {
   margin: 0;
   color: var(--color-mineral);
-  font-size: clamp(1.35rem, 2vw, 2.05rem);
-  letter-spacing: -0.015em;
+  font-size: 1.65rem;
+  letter-spacing: 0;
   line-height: 1.24;
 }
 
@@ -775,7 +775,15 @@
 
   .kdo-home-hero h1 {
     max-width: 9.5ch;
-    font-size: clamp(3rem, 5vw, 4.9rem);
+    font-size: 3.35rem;
+  }
+
+  .product-card h2 {
+    font-size: 1.62rem;
+  }
+
+  .kdo-case-card h3 {
+    font-size: 1.42rem;
   }
 
   .kdo-home-hero__copy > p:not(.eyebrow) {
