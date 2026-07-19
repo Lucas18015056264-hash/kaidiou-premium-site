@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages has no SPA fallback. Preserve the requested route and let index.html restore it.
+      const locationParts = window.location;
+      const repositorySegments = 1;
+      const basePath = locationParts.pathname
+        .split('/')
+        .slice(0, repositorySegments + 1)
+        .join('/');
+      const routePath = locationParts.pathname
+        .split('/')
+        .slice(repositorySegments + 1)
+        .join('/');
+      window.location.replace(
+        `${locationParts.protocol}//${locationParts.host}${basePath}/?/${routePath}` +
+          (locationParts.search ? `&${locationParts.search.slice(1)}` : '') +
+          locationParts.hash,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
