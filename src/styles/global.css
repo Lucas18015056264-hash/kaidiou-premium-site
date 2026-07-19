@@ -527,7 +527,7 @@ h2 {
 .home-page h2 {
   font-size: clamp(2.25rem, 4.7vw, 5.75rem);
   letter-spacing: -0.048em;
-  line-height: 0.98;
+  line-height: 1.12;
 }
 
 .home-page h3 {

@@ -768,8 +768,8 @@
   }
 
   .kdo-home-hero h1 {
-    max-width: 10.5ch;
-    font-size: clamp(2.85rem, 12vw, 4.35rem);
+    max-width: 9.5ch;
+    font-size: clamp(3rem, 10vw, 4.9rem);
   }
 
   .kdo-home-hero__copy > p:not(.eyebrow) {
