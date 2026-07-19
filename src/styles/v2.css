@@ -88,6 +88,7 @@
 
 .product-card p {
   color: var(--color-concrete);
+  line-height: 1.7;
 }
 
 .product-card ul {
@@ -395,19 +396,24 @@
 .kdo-case-card__copy .eyebrow {
   margin: 0;
   color: var(--color-nano);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .kdo-case-card h3 {
   margin: 0;
   color: var(--color-mineral);
   font-size: clamp(1.35rem, 2vw, 2.05rem);
+  letter-spacing: -0.015em;
+  line-height: 1.24;
 }
 
 .kdo-case-card__copy > p:not(.eyebrow) {
   margin: 0;
   color: color-mix(in srgb, var(--color-mineral) 76%, var(--color-concrete));
-  font-size: 0.94rem;
-  line-height: 1.65;
+  font-size: 0.98rem;
+  line-height: 1.72;
 }
 
 .kdo-case-card__source {

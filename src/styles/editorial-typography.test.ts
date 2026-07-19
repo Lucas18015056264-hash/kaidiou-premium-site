@@ -29,4 +29,20 @@ describe('editorial typography tokens', () => {
     expect(mobileHomeTitleRule).toContain('font-size: clamp(3rem, 5vw, 4.9rem)');
     expect(homeHeadingRule).toContain('line-height: 1.12');
   });
+
+  it('keeps product and case cards readable without losing their structure', () => {
+    const productBodyRule = v2Css.match(/\.product-card p\s*\{([^}]*)\}/)?.[1] ?? '';
+    const caseTitleRule = v2Css.match(/\.kdo-case-card h3\s*\{([^}]*)\}/)?.[1] ?? '';
+    const caseBodyRule = v2Css.match(/\.kdo-case-card__copy > p:not\(\.eyebrow\)\s*\{([^}]*)\}/)?.[1] ?? '';
+    const caseEyebrowRule = v2Css.match(/\.kdo-case-card__copy \.eyebrow\s*\{([^}]*)\}/)?.[1] ?? '';
+
+    expect(productBodyRule).toContain('line-height: 1.7');
+    expect(caseTitleRule).toContain('line-height: 1.24');
+    expect(caseTitleRule).toContain('letter-spacing: -0.015em');
+    expect(caseBodyRule).toContain('font-size: 0.98rem');
+    expect(caseBodyRule).toContain('line-height: 1.72');
+    expect(caseEyebrowRule).toContain('font-family: var(--font-body)');
+    expect(caseEyebrowRule).toContain('font-weight: 600');
+    expect(caseEyebrowRule).toContain('letter-spacing: 0.04em');
+  });
 });
