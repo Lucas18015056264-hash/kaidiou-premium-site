@@ -6,15 +6,15 @@
   --color-nano: #70d89a;
   --color-safety: #d5e85b;
 
-  --font-display: "Bahnschrift SemiCondensed", "Arial Narrow", "Roboto Condensed", "Microsoft YaHei UI", sans-serif;
-  --font-body: Inter, "Segoe UI", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  --font-display: "DengXian", "PingFang SC", "Microsoft YaHei UI", sans-serif;
+  --font-body: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
   --font-utility: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
 
   --text-display: clamp(3rem, 6.8vw, 7.75rem);
   --text-h1-route: clamp(2.7rem, 5vw, 6rem);
   --text-h2: clamp(1.35rem, 2.1vw, 2.25rem);
   --text-body-lg: clamp(1.05rem, 1.4vw, 1.35rem);
-  --text-body: clamp(0.96rem, 0.4vw + 0.84rem, 1.1rem);
+  --text-body: clamp(1rem, 0.4vw + 0.84rem, 1.1rem);
   --text-small: 0.78rem;
 
   --space-1: 0.5rem;

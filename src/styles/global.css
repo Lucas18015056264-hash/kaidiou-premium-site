@@ -16,7 +16,7 @@ body {
   color: var(--color-mineral);
   font-family: var(--font-body);
   font-size: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.72;
   text-rendering: optimizeLegibility;
 }
 
@@ -71,7 +71,8 @@ h1,
 h2 {
   font-family: var(--font-display);
   font-weight: 500;
-  line-height: 0.98;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 
 .site-shell {
