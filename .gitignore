@@ -11,6 +11,9 @@ video-production/generated/*.wav
 public/media/video/generated/
 public/media/video/*.mp4
 public/media/video/*.wav
+public/media/video/*.m4a
+!public/media/video/ai-material-flow.mp4
+!public/media/video/kdo-ambient-bed.m4a
 .env
 .env.*
 !.env.example

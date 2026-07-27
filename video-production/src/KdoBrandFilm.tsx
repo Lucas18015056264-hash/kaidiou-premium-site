@@ -25,7 +25,7 @@ export const KdoBrandFilm = ({ format }: { format: FilmFormat }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: BRAND.colors.graphite }}>
-      <Audio src={staticFile('media/video/kdo-ambient-bed.wav')} volume={0.9} />
+      <Audio src={staticFile('media/video/kdo-ambient-bed.m4a')} volume={0.9} />
       {SCENES.map((scene) => {
         const from = cursor;
         cursor += scene.durationInFrames;

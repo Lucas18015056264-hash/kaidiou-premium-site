@@ -1,6 +1,6 @@
 param(
   [Parameter(Mandatory = $false)]
-  [string]$Output = "public/media/video/kdo-ambient-bed.wav"
+  [string]$Output = "public/media/video/kdo-ambient-bed.m4a"
 )
 
 $ErrorActionPreference = "Stop"
@@ -26,7 +26,7 @@ afade=t=out:st=38:d=4,
 loudnorm=I=-24:LRA=6:TP=-2.5,
 alimiter=limit=0.88[out]
 "@ `
-  -map "[out]" -ar 48000 -ac 2 -c:a pcm_s24le -- "$Output"
+  -map "[out]" -ar 48000 -ac 2 -c:a aac -b:a 192k -movflags +faststart -- "$Output"
 
 if ($LASTEXITCODE -ne 0) {
   throw "ffmpeg failed to build the ambient bed"
@@ -38,4 +38,4 @@ if ([math]::Abs($duration - 42) -gt 0.05) {
   throw "Unexpected audio duration: $duration seconds"
 }
 
-Write-Output "PASS ambient bed: $([math]::Round($duration, 3))s, 48kHz stereo PCM"
+Write-Output "PASS ambient bed: $([math]::Round($duration, 3))s, 48kHz stereo AAC"
