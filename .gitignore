@@ -5,6 +5,11 @@ test-results/
 .playwright-cli/
 .superpowers/
 design-system/
+video-production/render/
+video-production/generated/
+public/media/video/generated/
+public/media/video/*.mp4
+public/media/video/*.wav
 .env
 .env.*
 !.env.example

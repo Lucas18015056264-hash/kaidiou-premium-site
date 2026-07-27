@@ -10,7 +10,12 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:server": "npm run build && vite preview --host 127.0.0.1 --port 4174 --strictPort",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "video:studio": "remotion studio video-production/src/index.ts --config=video-production/remotion.config.ts",
+    "video:still:vertical": "remotion still video-production/src/index.ts KDO-Vertical video-production/render/vertical-preview.png --frame=360 --config=video-production/remotion.config.ts",
+    "video:still:horizontal": "remotion still video-production/src/index.ts KDO-Horizontal video-production/render/horizontal-preview.png --frame=360 --config=video-production/remotion.config.ts",
+    "video:render:vertical": "remotion render video-production/src/index.ts KDO-Vertical video-production/render/kdo-brand-film-vertical.mp4 --codec=h264 --crf=16 --config=video-production/remotion.config.ts",
+    "video:render:horizontal": "remotion render video-production/src/index.ts KDO-Horizontal video-production/render/kdo-brand-film-horizontal.mp4 --codec=h264 --crf=16 --config=video-production/remotion.config.ts"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -19,14 +24,16 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",
+    "@remotion/cli": "^4.0.499",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.3.0",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
-    "@types/node": "^24.3.0",
     "@vitejs/plugin-react": "^5.0.2",
     "jsdom": "^26.1.0",
+    "remotion": "^4.0.499",
     "typescript": "^5.9.2",
     "vite": "^7.1.3",
     "vitest": "^3.2.4"
