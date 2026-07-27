@@ -46,8 +46,15 @@ function Assert-Render {
     throw "Unexpected audio format $($audio.sample_rate)Hz/$($audio.channels)ch: $Path"
   }
 
-  $blackLog = ffmpeg -hide_banner -nostats -i "$Path" `
+  $previousPreference = $ErrorActionPreference
+  $ErrorActionPreference = "Continue"
+  $blackLog = & ffmpeg -hide_banner -nostats -i "$Path" `
     -vf "blackdetect=d=0.45:pix_th=0.015" -an -f null NUL 2>&1
+  $blackDetectExit = $LASTEXITCODE
+  $ErrorActionPreference = $previousPreference
+  if ($blackDetectExit -ne 0) {
+    throw "ffmpeg black-frame scan failed: $Path"
+  }
   $blackFrames = $blackLog | Select-String -Pattern "black_start"
   if ($blackFrames) {
     throw "Unexpected sustained black frame detected: $Path"
