@@ -15,7 +15,8 @@
     "video:still:vertical": "remotion still video-production/src/index.ts KDO-Vertical video-production/render/vertical-preview.png --frame=360 --config=video-production/remotion.config.ts",
     "video:still:horizontal": "remotion still video-production/src/index.ts KDO-Horizontal video-production/render/horizontal-preview.png --frame=360 --config=video-production/remotion.config.ts",
     "video:render:vertical": "remotion render video-production/src/index.ts KDO-Vertical video-production/render/kdo-brand-film-vertical.mp4 --codec=h264 --crf=16 --config=video-production/remotion.config.ts",
-    "video:render:horizontal": "remotion render video-production/src/index.ts KDO-Horizontal video-production/render/kdo-brand-film-horizontal.mp4 --codec=h264 --crf=16 --config=video-production/remotion.config.ts"
+    "video:render:horizontal": "remotion render video-production/src/index.ts KDO-Horizontal video-production/render/kdo-brand-film-horizontal.mp4 --codec=h264 --crf=16 --config=video-production/remotion.config.ts",
+    "video:verify": "powershell -NoProfile -ExecutionPolicy Bypass -File video-production/scripts/verify-render.ps1"
   },
   "dependencies": {
     "react": "^19.1.1",

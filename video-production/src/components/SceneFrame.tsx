@@ -36,7 +36,10 @@ export const SceneFrame = ({
       <div
         style={{
           borderTop: `2px solid ${BRAND.colors.safety}`,
-          color: BRAND.colors.mist,
+          color:
+            background === BRAND.colors.mineral
+              ? BRAND.colors.graphite
+              : BRAND.colors.mist,
           fontSize: format === 'vertical' ? 18 : 16,
           left: padded ? safeArea.left : format === 'vertical' ? 72 : 96,
           letterSpacing: '0.14em',
